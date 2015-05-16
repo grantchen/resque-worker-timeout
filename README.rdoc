@@ -1,9 +1,27 @@
 = resque-worker-timeout
 
-Description goes here.
+A Resque plugin. If you want set worker timeout, extend it with this module.
+
+== Usage
+
+```ruby
+class TransferFileWorker
+  extend Resque::Plugins::WorkerTimeout
+
+  # 10 minutes (default 10 minutes)
+  @timeout = 600
+
+  # reenqueue worker if timeout happend (default false)
+  @reenqueue_worker = true
+
+  def self.perform(file_name)
+    # transfer file
+  end
+end
+```
 
 == Contributing to resque-worker-timeout
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
@@ -16,4 +34,3 @@ Description goes here.
 
 Copyright (c) 2015 grant. See LICENSE.txt for
 further details.
-
