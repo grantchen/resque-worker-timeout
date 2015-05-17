@@ -2,6 +2,13 @@
 
 A Resque plugin. If you want set worker timeout, extend it with this module.
 
+### Install
+
+```ruby
+gem 'resque-worker-timeout'
+```
+
+
 ### Usage
 
 ```ruby
